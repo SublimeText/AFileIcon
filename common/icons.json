@@ -1469,6 +1469,15 @@
       }
     ]
   },
+  "file_type_svelte": {
+    "color": "orange",
+    "syntaxes": [
+      {
+        "name": "Svelte",
+        "scope": "text.html.svelte"
+      }
+    ]
+  },
   "file_type_svg": {
     "color": "orange",
     "aliases": [
