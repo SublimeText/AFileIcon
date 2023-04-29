@@ -2801,6 +2801,18 @@
 			}
 		]
 	},
+	"file_type_typst": {
+		"color": "cyan",
+		"syntaxes": [
+			{
+				"extensions": [
+					"typ"
+				],
+				"name": "Typst",
+				"scope": "source.typst"
+			}
+		]
+	},
 	"file_type_unity3d": {
 		"color": "sky",
 		"syntaxes": [

@@ -356,6 +356,10 @@ This file contains a list of possible packages you may need to install to see th
 - [TypeScript](https://packagecontrol.io/packages/TypeScript)
 - [TypeScript Syntax](https://packagecontrol.io/packages/TypeScript%20Syntax)
 
+## Typst
+
+- [Typst](https://github.com/hyrious/typst-syntax-highlight)
+
 ## V
 
 - [V](https://packagecontrol.io/packages/V)
