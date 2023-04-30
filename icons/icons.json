@@ -951,6 +951,14 @@
 			},
 			{
 				"extensions": [
+					"description",
+					".gitdescription"
+				],
+				"name": "Git Description",
+				"scope": "text.git.description"
+			},
+			{
+				"extensions": [
 					".gitkeep"
 				],
 				"name": "Git Keep",
