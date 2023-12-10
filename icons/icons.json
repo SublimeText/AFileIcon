@@ -325,6 +325,19 @@
 	"file_type_binary": {
 		"color": "graphite"
 	},
+	"file_type_biome": {
+		"aliases": [
+			{
+				"base": "source.json",
+				"extensions": [
+					"biome.json"
+				],
+				"name": "JSON (Biome)",
+				"scope": "source.json.biome"
+			}
+		],
+		"color": "yellow"
+	},
 	"file_type_blade": {
 		"color": "orange",
 		"syntaxes": [
