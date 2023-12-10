@@ -1781,6 +1781,20 @@
 			}
 		]
 	},
+	"file_type_maven": {
+		"aliases": [
+			{
+				"base": "text.xml",
+				"extensions": [
+					".flattened-pom.xml",
+					"pom.xml"
+				],
+				"name": "POM (Maven)",
+				"scope": "text.xml.maven"
+			}
+		],
+		"color": "red"
+	},
 	"file_type_maya": {
 		"color": "cyan",
 		"syntaxes": [
