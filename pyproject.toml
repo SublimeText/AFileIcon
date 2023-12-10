@@ -7,7 +7,7 @@ exclude = '''
   | \.mypy_cache
   | \.tox
   | \.venv
-  | build
+  | tests
   | vendor
 )/
 '''

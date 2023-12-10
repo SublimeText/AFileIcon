@@ -12,20 +12,11 @@ We have very precise rules over how our git commit messages can be formatted. Th
 
 We use [**Angular JS commit guidelines**](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines) (except scope notes: we don't need them).
 
-## Building
+## Development
 
-## Prerequisites
+### Prerequisites
 
-This package provides the `build` python package to create the preferences and icons. In order to add new icons a _python 3_ interpreter is required.
-
-The `build` uses [pyPNG](https://pypi.org/project/pypng/) and [CairoSVG](https://pypi.org/project/CairoSVG/) to convert the icons from SVG to PNG. You nee to...
-
-```bash
-pip install cairosvg
-pip install pypng
-```
-
-The CairoSVG needs the `cairo` library being present on the system.
+The CairoSVG dependency needs the `cairo` library being present on the system.
 
 **Linux**
 
@@ -35,34 +26,58 @@ sudo apt-get install libcairo2
 
 **Windows**
 
-You can download the latest release of the [cairo.dll](https://github.com/preshing/cairo-windows/releases) from https://github.com/preshing/cairo-windows/releases and place it somewhere python can load it from.
+You can download the latest release of [`cairo.dll`](https://github.com/preshing/cairo-windows/releases) and place it somewhere Python can load it from.
+
+As a last resort, [Graphviz](https://graphviz.org/) includes `cairo.dll` in its distribution.
+
+### Installation
+
+Navigate to _A File Icon_ root directory and call...
+
+**Linux/MacOS**
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python3 -m pip install -U -r requirements-dev.txt
+```
+
+**Windows**
+
+```cmd
+py -m venv .venv
+.venv\Scripts\activate
+py -m pip install -U -r requirements-dev.txt
+```
 
 ### Building
 
-Run the build scripts via makefile:
+Navigate to _A File Icon_ root directory, activate python virtual environment and call...
+
+**Linux/MacOS**
 
 ```bash
-# build all
-make all
+# build everything
+python3 build
 
-# build icons
-make icons
+# build icons only
+python3 build --icons
 
-# build preferences
-make preferences
+# build preferences only
+python3 build --preferences
 ```
 
-If no make is available run the build scripts directly via python:
+**Windows**
 
-```bash
-# build all
-python -u build --icons --preferences
+```cmd
+: build everything
+py build
 
-# build icons
-python -u build --icons
+: build icons only
+py build --icons
 
-# build preferences
-python -u build --preferences
+: build preferences only
+py build --preferences
 ```
 
 ## Want to add new icons?

@@ -1,0 +1,8 @@
+pip
+
+# Build
+cairosvg >= 2.7.0
+pypng >= 0.20220715.0
+
+# Format
+black >= 23.7.0

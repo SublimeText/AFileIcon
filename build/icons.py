@@ -1,25 +1,9 @@
+import cairosvg
 import json
 import os
+import png
 import re
 import subprocess
-
-try:
-    import cairosvg
-except ImportError:
-    print(
-        "Error: CairoSVG not installed!\n"
-        "       Run `pip install cairosvg`!\n"
-        "       Windows users need the cairo.dll from"
-        " https://github.com/preshing/cairo-windows/releases"
-    )
-
-try:
-    import png
-except ImportError:
-    print(
-        "Error: pyPNG not installed!\n"
-        "       Run `pip install pypng`!"
-    )
 
 
 PACKAGE_ROOT = os.path.dirname(os.path.dirname(__file__))
