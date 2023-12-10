@@ -390,31 +390,6 @@
 		],
 		"color": "yellow"
 	},
-	"file_type_cabal": {
-		"color": "blue",
-		"syntaxes": [
-			{
-				"extensions": [
-					"cabal",
-					"cabal.project"
-				],
-				"name": "Plain Text (Cabal)",
-				"scope": "source.cabal"
-			}
-		]
-	},
-	"file_type_cairo": {
-		"color": "graphite",
-		"syntaxes": [
-			{
-				"extensions": [
-					"cairo"
-				],
-				"name": "Plain Text (Cairo)",
-				"scope": "source.cairo"
-			}
-		]
-	},
 	"file_type_c": {
 		"color": "purple",
 		"syntaxes": [
@@ -447,6 +422,59 @@
 			{
 				"name": "Objective C++",
 				"scope": "source.objc++"
+			}
+		]
+	},
+	"file_type_cabal": {
+		"color": "blue",
+		"syntaxes": [
+			{
+				"extensions": [
+					"cabal",
+					"cabal.project"
+				],
+				"name": "Plain Text (Cabal)",
+				"scope": "source.cabal"
+			}
+		]
+	},
+	"file_type_cad": {
+		"color": "orange",
+		"aliases": [
+			{
+				"extensions": [
+					"cad",
+					"stl",
+					"stp",
+					"step",
+					"wrl"
+				],
+				"name": "Plain Text (CAD)",
+				"scope": "text.plain.cad"
+			}
+		]
+	},
+	"file_type_caddy": {
+		"color": "blue",
+		"syntaxes": [
+			{
+				"extensions": [
+					"Caddyfile"
+				],
+				"name": "Plain Text (Caddyfile)",
+				"scope": "source.Caddyfile"
+			}
+		]
+	},
+	"file_type_cairo": {
+		"color": "graphite",
+		"syntaxes": [
+			{
+				"extensions": [
+					"cairo"
+				],
+				"name": "Plain Text (Cairo)",
+				"scope": "source.cairo"
 			}
 		]
 	},
@@ -498,6 +526,18 @@
 				"scope": "source.cmake, source.cmakeeditor"
 			}
 		]
+	},
+	"file_type_cname": {
+		"aliases": [
+			{
+				"extensions": [
+					"CNAME"
+				],
+				"name": "Plain Text (CNAME)",
+				"scope": "text.plain.cname"
+			}
+		],
+		"color": "sky"
 	},
 	"file_type_cobol": {
 		"color": "cyan",
@@ -599,20 +639,6 @@
 			}
 		]
 	},
-	"file_type_cuda": {
-		"color": "green",
-		"syntaxes": [
-			{
-				"base": "source.c++",
-				"extensions": [
-					"cu",
-					"cuh"
-				],
-				"name": "C++ (Cuda)",
-				"scope": "source.cuda-c++, source.c++.cuda"
-			}
-		]
-	},
 	"file_type_cppheader": {
 		"aliases": [
 			{
@@ -678,6 +704,20 @@
 			}
 		]
 	},
+	"file_type_cuda": {
+		"color": "green",
+		"syntaxes": [
+			{
+				"base": "source.c++",
+				"extensions": [
+					"cu",
+					"cuh"
+				],
+				"name": "C++ (Cuda)",
+				"scope": "source.cuda-c++, source.c++.cuda"
+			}
+		]
+	},
 	"file_type_cython": {
 		"color": "yellow",
 		"syntaxes": [
@@ -689,49 +729,6 @@
 				],
 				"name": "Plain Text (Cython)",
 				"scope": "source.cython"
-			}
-		]
-	},
-	"file_type_cad": {
-		"color": "orange",
-		"aliases": [
-			{
-				"extensions": [
-					"cad",
-					"stl",
-					"stp",
-					"step",
-					"wrl"
-				],
-				"name": "Plain Text (CAD)",
-				"scope": "text.plain.cad"
-			}
-		]
-	},
-	"file_type_caddy": {
-		"color": "blue",
-		"syntaxes": [
-			{
-				"extensions": [
-					"Caddyfile"
-				],
-				"name": "Plain Text (Caddyfile)",
-				"scope": "source.Caddyfile"
-			}
-		]
-	},
-	"file_type_email": {
-		"color": "graphite",
-		"syntaxes": [
-			{
-				"extensions": [
-					"eml",
-					"msg",
-					"mbx",
-					"mboxz"
-				],
-				"name": "Plain Text (Email)",
-				"scope": "text.email, text.eml"
 			}
 		]
 	},
@@ -876,6 +873,21 @@
 				],
 				"name": "Plain Text (Elm)",
 				"scope": "source.elm"
+			}
+		]
+	},
+	"file_type_email": {
+		"color": "graphite",
+		"syntaxes": [
+			{
+				"extensions": [
+					"eml",
+					"msg",
+					"mbx",
+					"mboxz"
+				],
+				"name": "Plain Text (Email)",
+				"scope": "text.email, text.eml"
 			}
 		]
 	},
