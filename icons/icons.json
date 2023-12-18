@@ -3853,7 +3853,8 @@
 		"syntaxes": [
 			{
 				"extensions": [
-					"zig"
+					"zig",
+					"zon"
 				],
 				"name": "Zig",
 				"scope": "source.zig"
