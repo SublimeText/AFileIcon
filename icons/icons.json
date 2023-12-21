@@ -1381,6 +1381,19 @@
 			}
 		]
 	},
+	"file_type_haxelib": {
+		"aliases": [
+			{
+				"base": "source.json",
+				"extensions": [
+					"haxelib.json"
+				],
+				"name": "JSON (Haxelib)",
+				"scope": "source.json.haxelib"
+			}
+		],
+		"color": "red"
+	},
 	"file_type_heroku": {
 		"color": "purple",
 		"syntaxes": [
@@ -1428,6 +1441,18 @@
 				],
 				"name": "Plain Text (HTTP)",
 				"scope": "source.http, text.http-request-response"
+			}
+		]
+	},
+	"file_type_hxml": {
+		"color": "blue",
+		"syntaxes": [
+			{
+				"extensions": [
+					"hxml"
+				],
+				"name": "Plain Text (HXML)",
+				"scope": "source.hxml"
 			}
 		]
 	},
