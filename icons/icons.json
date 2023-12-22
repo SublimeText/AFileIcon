@@ -1193,6 +1193,19 @@
 			}
 		]
 	},
+	"file_type_glyphs": {
+		"aliases": [
+			{
+				"base": "source.plist",
+				"extensions": [
+					"glyphs"
+				],
+				"name": "Glyphs (Property List)",
+				"scope": "source.plist.glyphs"
+			}
+		],
+		"color": "green"
+	},
 	"file_type_go": {
 		"color": "sky",
 		"syntaxes": [
