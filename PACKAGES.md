@@ -335,6 +335,10 @@ This file contains a list of possible packages you may need to install to see th
 
 - [REG](https://packagecontrol.io/packages/REG)
 
+## Requirements
+
+- [requirementstxt](https://packagecontrol.io/packages/requirementstxt)
+
 ## Riot
 
 - [Riot Syntax](https://packagecontrol.io/packages/Riot%20Syntax)

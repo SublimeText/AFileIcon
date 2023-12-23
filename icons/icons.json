@@ -2321,6 +2321,19 @@
 			}
 		]
 	},
+	"file_type_pip": {
+		"color": "sky",
+		"syntaxes": [
+			{
+				"extensions": [
+					"requirements.in",
+					"requirements.txt"
+				],
+				"name": "Plain Text (Requirements)",
+				"scope": "source.requirementstxt"
+			}
+		]
+	},
 	"file_type_playlist": {
 		"color": "blue",
 		"syntaxes": [
@@ -2601,8 +2614,7 @@
 		"aliases": [
 			{
 				"extensions": [
-					".python-version",
-					"py.typed"
+					".python-version"
 				],
 				"name": "Plain Text (Python)",
 				"scope": "text.plain.python"
@@ -2615,6 +2627,19 @@
 				"scope": "source.python"
 			}
 		]
+	},
+	"file_type_python_typed": {
+		"aliases": [
+			{
+				"base": "source.python",
+				"extensions": [
+					"py.typed"
+				],
+				"name": "Python (PEP 561)",
+				"scope": "source.python.typed"
+			}
+		],
+		"color": "blue"
 	},
 	"file_type_qt": {
 		"aliases": [
@@ -2934,6 +2959,21 @@
 				"scope": "source.env"
 			}
 		]
+	},
+	"file_type_settings_python": {
+		"aliases": [
+			{
+				"base": "source.ini",
+				"extensions": [
+					".coveragerc",
+					".flake8",
+					".pylintrc"
+				],
+				"name": "Plain Text (INI)",
+				"scope": "source.ini.python"
+			}
+		],
+		"color": "yellow"
 	},
 	"file_type_shell": {
 		"color": "green",

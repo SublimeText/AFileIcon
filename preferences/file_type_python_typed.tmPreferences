@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+	<dict>
+		<key>scope</key>
+		<string>source.python.typed</string>
+		<key>settings</key>
+		<dict>
+			<key>icon</key>
+			<string>file_type_python_typed</string>
+		</dict>
+	</dict>
+</plist>
