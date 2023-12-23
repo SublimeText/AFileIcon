@@ -130,6 +130,19 @@
 			}
 		]
 	},
+	"file_type_antlr": {
+		"color": "orange",
+		"syntaxes": [
+			{
+				"extensions": [
+					"g",
+					"g4"
+				],
+				"name": "Plain Text (ANTLR)",
+				"scope": "source.antlr"
+			}
+		]
+	},
 	"file_type_apache": {
 		"color": "yellow",
 		"syntaxes": [

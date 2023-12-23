@@ -20,6 +20,10 @@ This file contains a list of possible packages you may need to install to see th
 
 - [Ansible](https://packagecontrol.io/packages/Ansible)
 
+## ANTLR
+
+- [ANTLR syntax highlight](https://packagecontrol.io/packages/ANTLR%20syntax%20highlight)
+
 ## Arduino
 
 - [Arduino](https://packagecontrol.io/packages/Arduino)
