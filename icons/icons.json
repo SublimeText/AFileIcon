@@ -2086,11 +2086,19 @@
 			{
 				"base": "source.shell",
 				"extensions": [
-					".npmignore",
-					".npmrc"
+					".npmignore"
 				],
 				"name": "Shell Script (NPM)",
 				"scope": "source.shell.npm"
+			},
+			{
+				"base": "source.ini",
+				"extensions": [
+					".npmrc",
+					"npmrc"
+				],
+				"name": "Plain Text (NPM)",
+				"scope": "source.ini.npm"
 			},
 			{
 				"base": "source.json",
