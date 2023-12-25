@@ -3808,12 +3808,12 @@
 		"syntaxes": [
 			{
 				"extensions": [
+					"mt",
 					"wl",
 					"wls",
-					"wlt",
-					"mt"
+					"wlt"
 				],
-				"name": "Text Plain (Wolfram)",
+				"name": "Plain Text (Wolfram)",
 				"scope": "source.wolfram"
 			}
 		]
