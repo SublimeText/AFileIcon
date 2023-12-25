@@ -2,7 +2,7 @@
 <plist version="1.0">
 	<dict>
 		<key>scope</key>
-		<string>source.shell.yarn, source.yaml.yarn</string>
+		<string>source.json.yarn, source.yaml.yarn, text.plain.yarn</string>
 		<key>settings</key>
 		<dict>
 			<key>icon</key>

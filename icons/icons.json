@@ -3845,19 +3845,28 @@
 	"file_type_yarn": {
 		"aliases": [
 			{
-				"base": "source.shell",
 				"extensions": [
+					".yarnclean",
 					".yarnrc"
 				],
-				"name": "Shell Script (Yarn)",
-				"scope": "source.shell.yarn"
+				"name": "Plain Text (Yarn)",
+				"scope": "text.plain.yarn"
+			},
+			{
+				"base": "source.json",
+				"extensions": [
+					".yarn-integrity",
+					".yarn-metadata.json"
+				],
+				"name": "JSON (Yarn)",
+				"scope": "source.json.yarn"
 			},
 			{
 				"base": "source.yaml",
 				"extensions": [
-					"yarn.lock",
+					".yarnrc.yaml",
 					".yarnrc.yml",
-					".yarnrc.yaml"
+					"yarn.lock"
 				],
 				"name": "YAML (Yarn)",
 				"scope": "source.yaml.yarn"
