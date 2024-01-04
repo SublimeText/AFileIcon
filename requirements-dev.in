@@ -1,0 +1,9 @@
+# If you change this file, please run:
+# pip-compile requirements-dev.in
+
+# Build
+cairosvg
+pypng
+
+# Format
+black

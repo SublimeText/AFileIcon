@@ -13,4 +13,5 @@
 /.gitattributes        export-ignore
 /.gitignore            export-ignore
 /pyproject.toml        export-ignore
+/requirements-dev.in   export-ignore
 /requirements-dev.txt  export-ignore

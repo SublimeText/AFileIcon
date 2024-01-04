@@ -11,3 +11,7 @@ exclude = '''
   | vendor
 )/
 '''
+
+[tool.pip-tools]
+generate-hashes = true
+output-file = "requirements-dev.txt"
