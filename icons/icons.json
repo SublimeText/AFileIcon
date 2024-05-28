@@ -343,7 +343,8 @@
 			{
 				"base": "source.json",
 				"extensions": [
-					"biome.json"
+					"biome.json",
+					"biome.jsonc"
 				],
 				"name": "JSON (Biome)",
 				"scope": "source.json.biome"
