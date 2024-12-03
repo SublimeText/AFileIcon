@@ -1987,6 +1987,18 @@
 			}
 		]
 	},
+	"file_type_mojo": {
+		"color": "graphite",
+		"syntaxes": [
+			{
+				"extensions": [
+					"mojo"
+				],
+				"name": "Plain Text (Mojo)",
+				"scope": "source.mojo"
+			}
+		]
+	},
 	"file_type_mp3tag": {
 		"color": "yellow",
 		"syntaxes": [
