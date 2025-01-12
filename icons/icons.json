@@ -1692,7 +1692,7 @@
 					"kdl"
 				],
 				"name": "Plain Text (KDL)",
-				"scope": "text.kdl"
+				"scope": "source.kdl, text.kdl"
 			}
 		]
 	},
