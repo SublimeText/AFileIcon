@@ -2,7 +2,7 @@
 <plist version="1.0">
 	<dict>
 		<key>scope</key>
-		<string>text.kdl</string>
+		<string>source.kdl, text.kdl, text.kdl.1, text.kdl.2</string>
 		<key>settings</key>
 		<dict>
 			<key>icon</key>
