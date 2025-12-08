@@ -435,10 +435,6 @@
 			{
 				"name": "C",
 				"scope": "source.c"
-			},
-			{
-				"name": "Objective-C",
-				"scope": "source.objc"
 			}
 		]
 	},
@@ -457,10 +453,6 @@
 			{
 				"name": "C++",
 				"scope": "source.c++"
-			},
-			{
-				"name": "Objective C++",
-				"scope": "source.objc++"
 			}
 		]
 	},
@@ -671,10 +663,6 @@
 			{
 				"name": "C++",
 				"scope": "source.c++"
-			},
-			{
-				"name": "Objective C++",
-				"scope": "source.objc++"
 			}
 		]
 	},
@@ -2192,6 +2180,24 @@
 			}
 		],
 		"color": "sky"
+	},
+	"file_type_objc": {
+		"color": "purple",
+		"syntaxes": [
+			{
+				"name": "Objective-C",
+				"scope": "source.objc"
+			}
+		]
+	},
+	"file_type_objc++": {
+		"color": "sky",
+		"syntaxes": [
+			{
+				"name": "Objective C++",
+				"scope": "source.objc++"
+			}
+		]
 	},
 	"file_type_ocaml": {
 		"color": "yellow",
