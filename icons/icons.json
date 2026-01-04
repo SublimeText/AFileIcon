@@ -1816,6 +1816,18 @@
 			}
 		]
 	},
+	"file_type_livescript": {
+		"color": "sky",
+		"syntaxes": [
+			{
+				"extensions": [
+					"ls"
+				],
+				"name": "Plain Text (LiveScript)",
+				"scope": "source.livescript, source.LiveScript"
+			}
+		]
+	},
 	"file_type_lisp": {
 		"color": "red",
 		"syntaxes": [

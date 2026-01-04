@@ -209,6 +209,10 @@ This file contains a list of possible packages you may need to install to see th
 
 - [Siteleaf Liquid Syntax](https://packagecontrol.io/packages/Siteleaf%20Liquid%20Syntax)
 
+## LiveScript
+
+- [LiveScript](https://packagecontrol.io/packages/LiveScript)
+
 ## LSL
 
 - [LSL](https://packagecontrol.io/packages/LSL)
