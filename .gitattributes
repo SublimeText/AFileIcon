@@ -12,5 +12,8 @@
 /.flake8               export-ignore
 /.gitattributes        export-ignore
 /.gitignore            export-ignore
+/biome.json            export-ignore
 /pyproject.toml        export-ignore
 /requirements-dev.txt  export-ignore
+/svglint.config.mjs    export-ignore
+/svgo.config.mjs       export-ignore
