@@ -4160,6 +4160,18 @@
 		],
 		"color": "purple"
 	},
+	"file_type_yue": {
+		"color": "graphite",
+		"syntaxes": [
+			{
+				"extensions": [
+					"yue"
+				],
+				"name": "Plain Text (YueScript)",
+				"scope": "source.yue"
+			}
+		]
+	},
 	"file_type_zig": {
 		"color": "yellow",
 		"syntaxes": [
