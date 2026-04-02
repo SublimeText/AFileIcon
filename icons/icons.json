@@ -1872,6 +1872,7 @@
 				"extensions": [
 					"Cargo.lock",
 					"Gopkg.lock",
+					"mise.lock",
 					"uv.lock"
 				],
 				"name": "TOML (Lock)",
