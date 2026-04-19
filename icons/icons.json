@@ -1880,6 +1880,7 @@
 			{
 				"base": "source.yaml",
 				"extensions": [
+					"pubspec.lock",
 					"yarn.lock"
 				],
 				"name": "YAML (Lock)",
