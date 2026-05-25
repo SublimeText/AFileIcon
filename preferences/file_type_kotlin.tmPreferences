@@ -2,7 +2,7 @@
 <plist version="1.0">
 	<dict>
 		<key>scope</key>
-		<string>source.Kotlin</string>
+		<string>source.Kotlin, source.kotlin</string>
 		<key>settings</key>
 		<dict>
 			<key>icon</key>

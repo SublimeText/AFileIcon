@@ -1732,19 +1732,19 @@
 					"kts"
 				],
 				"name": "Plain Text (Kotlin)",
-				"scope": "source.Kotlin"
+				"scope": "source.Kotlin, source.kotlin"
 			}
 		]
 	},
 	"file_type_kotlin_gradle": {
 		"aliases": [
 			{
-				"base": "source.Kotlin",
+				"base": "source.kotlin",
 				"extensions": [
 					"gradle.kts"
 				],
 				"name": "Kotlin (Gradle)",
-				"scope": "source.Kotlin.gradle"
+				"scope": "source.kotlin.gradle"
 			}
 		],
 		"color": "blue"
@@ -1881,6 +1881,7 @@
 			{
 				"base": "source.yaml",
 				"extensions": [
+					"pubspec.lock",
 					"yarn.lock"
 				],
 				"name": "YAML (Lock)",
