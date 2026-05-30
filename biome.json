@@ -1,0 +1,21 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.7.0/schema.json",
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"complexity": { "useLiteralKeys": "off" }
+		}
+	},
+	"formatter": {
+		"enabled": false
+	},
+	"organizeImports": {
+		"enabled": false
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	}
+}
