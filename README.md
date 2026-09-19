@@ -118,7 +118,7 @@ Rasterized icons can be found in `icons` folder.
 [customization]: https://github.com/deathaxe/sublime-a-file-icon#customization
 [downloads]: https://packagecontrol.io/packages/A%20File%20Icon 'A File Icon @ Package Control'
 [forum]: https://forum.sublimetext.com/t/a-file-icon-sublime-file-specific-icons-for-improved-visual-grepping/25874
-[icons]: https://github.com/deathaxe/sublime-a-file-icon/tree/develop/icons/multi
+[icons]: https://github.com/deathaxe/sublime-a-file-icon/tree/develop/icons/colored
 [known-issues]: https://github.com/deathaxe/sublime-a-file-icon/labels/known%20issue
 [new-issue]: https://github.com/deathaxe/sublime-a-file-icon/issues/new
 [packages]: https://github.com/deathaxe/sublime-a-file-icon/blob/develop/PACKAGES.md

@@ -30,21 +30,21 @@ def create_icons(icons):
 
     for icon_name, icon_data in icons.items():
         with open(icons_path("svg", icon_name + ".svg")) as fp:
-            svg_multi = fp.read()
-            svg_mono = replace_color(svg_multi, ".+?", "#fff")
+            svg_colored = fp.read()
+            svg_mono = replace_color(svg_colored, ".+?", "#fff")
             color = colors.get(icon_data["color"])
             if color:
-                svg_multi = replace_color(svg_multi, "#000", color)
+                svg_colored = replace_color(svg_colored, "#000", color)
 
         for size in (1, 2, 3):
             suffix = f"@{size}x.png" if size > 1 else ".png"
             create_png(
-                bytestring=svg_multi,
-                write_to=icons_path("multi", icon_name + suffix),
+                bytestring=svg_colored,
+                write_to=icons_path("color", icon_name + suffix),
                 size=size * 16,
             )
             create_png(
                 bytestring=svg_mono,
-                write_to=icons_path("single", icon_name + suffix),
+                write_to=icons_path("mono", icon_name + suffix),
                 size=size * 16,
             )

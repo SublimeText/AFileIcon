@@ -26,7 +26,7 @@ def create_icon_theme(icons):
         indent="\t",
     )
 
-    theme = PACKAGE_ROOT / "icons/multi/A File Icon.sublime-file-icons"
+    theme = PACKAGE_ROOT / "icons/color/A File Icon.sublime-file-icons"
     theme.write_text(text)
-    theme = PACKAGE_ROOT / "icons/single/A File Icon (Mono).sublime-file-icons"
+    theme = PACKAGE_ROOT / "icons/mono/A File Icon (Mono).sublime-file-icons"
     theme.write_text(text)

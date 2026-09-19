@@ -95,7 +95,7 @@ If you want to add a new icon, please follow these steps:
 
 > All settings should be alphabetically sorted.
 
-> Please do not change any other files - specially in `icons/multi`, `icons/single` and `preferences` folders.
+> Please do not change any other files - specially in `icons/colored` and `icons/mono` folders.
 
 ### Icon
 
