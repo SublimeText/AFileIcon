@@ -1,5 +1,4 @@
-import os
-
+from pathlib import Path
 from textwrap import dedent
 
 
@@ -24,8 +23,7 @@ def create_preferences(icons):
         .lstrip()
         .replace("  ", "\t")
     )
-
-    package_root = os.path.dirname(os.path.dirname(__file__))
+    package_root = Path(__file__).parent.parent
 
     for name, data in icons.items():
         scopes = set()
@@ -35,7 +33,5 @@ def create_preferences(icons):
                     scopes.add(scope.strip())
 
         if scopes:
-            with open(
-                os.path.join(package_root, "preferences", name + ".tmPreferences"), "w"
-            ) as out:
-                out.write(template.format(name=name, scope=", ".join(sorted(scopes))))
+            pref = package_root / "preferences" / (name + ".tmPreferences")
+            pref.write_text(template.format(name=name, scope=", ".join(sorted(scopes))))

@@ -18,10 +18,6 @@
 									"base_file": "${packages}/A File Icon/A File Icon.sublime-settings",
 									"default": "// A File Icon Preferences – User\n// ================================================================\n{\n\t$0\n}\n"
 								}
-							},
-							{
-								"caption": "Revert to a Freshly Installed State",
-								"command": "afi_revert"
 							}
 						]
 					}

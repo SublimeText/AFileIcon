@@ -2,7 +2,7 @@
 <plist version="1.0">
 	<dict>
 		<key>scope</key>
-		<string>source.hcl, source.terraform, source.terraform-vars</string>
+		<string>source.hcl, source.json, source.terraform, source.terraform-vars</string>
 		<key>settings</key>
 		<dict>
 			<key>icon</key>

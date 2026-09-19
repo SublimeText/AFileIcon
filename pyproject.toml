@@ -1,13 +1,20 @@
-# Configuration for Black.
-
 [tool.black]
 exclude = '''
 /(
   | \.git
-  | \.mypy_cache
-  | \.tox
-  | \.venv
+  | \.github
   | tests
   | vendor
 )/
 '''
+line-length = 100
+
+[tool.ruff]
+exclude = [
+  ".git",
+  ".github",
+  "tests",
+  "vendor"
+]
+line-length = 100
+target-version = "py314"

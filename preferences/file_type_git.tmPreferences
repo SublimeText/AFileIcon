@@ -2,7 +2,7 @@
 <plist version="1.0">
 	<dict>
 		<key>scope</key>
-		<string>source.git, source.shell.git, text.git, text.git.blame, text.git.description, text.git.keep</string>
+		<string>source.diff.git, source.git, source.shell.git, text.git.attributes, text.git.blame, text.git.blame.ignorerevs, text.git.codeowners, text.git.commit, text.git.config, text.git.description, text.git.ignore, text.git.keep, text.git.link, text.git.mailmap, text.git.rebase</string>
 		<key>settings</key>
 		<dict>
 			<key>icon</key>

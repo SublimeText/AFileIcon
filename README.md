@@ -11,8 +11,6 @@ Its aims are:
 
 * Provide globally available file type specific icons for each UI themes, whether they provide their own file type specific icons or not.
 
-* Workaround a ST core bug, which causes no icons to be displayed for file types an installed but not selected/active theme provides definitions for via `tmPreferences` files.
-
 * Display file icons, even if required syntax definition is not installed.
 
 * Display specific icons for files, no dedicated syntax definition exists for.
@@ -41,6 +39,26 @@ The easiest way to install is using Sublime's [Package Control][downloads]. It's
 
 > **Note:** Don't forget to restart Sublime Text after installing this package. 
 
+### Selecting Icon Theme
+
+As of ST4206, file icons are specified by "file icon themes".
+
+To activate A File Icon's theme, add the following line to your user prferences.
+
+```jsonc
+{
+    "file_icon_theme": "A File Icon.sublime-file-icons",
+}
+```
+
+For monochrome icons specify
+
+```jsonc
+{
+    "file_icon_theme": "A File Icon (Mono).sublime-file-icons",
+}
+```
+
 ### Customization
 
 You can change the color, opacity level and size of the icons by modifying your user preferences file, which you can find by:
@@ -48,43 +66,27 @@ You can change the color, opacity level and size of the icons by modifying your 
 * `Preferences → Package Settings → A File Icon → Settings`,
 * Choose `A File Icon: Settings` in `Command Palette`.
 
-### Wrong Icons
-
-Sublime Text uses syntax scopes for file-specific icons. That's why icons of packages provided by the community require them to be installed.
-
-See the list of [community packages][packages] that you may need to install to see the right icon.
-
-### Themes
-
-If your theme supports an icon customization you can choose what icons you want to use – provided by the theme (by default) or provided by the package. Otherwise this package adds its own icons only.
-
-### Troubleshooting
-
-If something goes wrong try to:
-
-1. Open `Command Palette` using menu item `Tools → Command Palette...`.
-2. Choose `A File Icon: Revert to a Freshly Installed State`.
-3. Restart Sublime Text.
-
 ## Developers
 
-### Bring Support of the File Icon Customization to Your Theme
+### Bring support file icon customization to your theme
+ 
+As of Sublime Text 4206, dedicated icon themes are supported, which A File Icon v4 relies on.
 
-If you are a theme developer and you want to support a file icon customization, you should:
+A side effect is it no longer merging its icons into those shipped with themes.
 
-* Remove all stuff related to the icon setup: `.tmPreferences`, `.sublime-settings`, `.sublime-syntax` and `.tmLanguage` files.
-* Rename all your existing icons to match [these ones][icons].
-* Add `.supports-a-file-icon-customization` file to the root of your theme (this is how we check if the theme **supports** customization of the file-specific icons).
+Ideally, icon themes are deployed by dedicated packages to fully separate them from themes or color schemes.
+
+If theme packages ship icons, a related `.sublime-file-icons` file is to be defined for them to be selectable by end users.
+
+The `.supports-a-file-icon-customization` is still evaluated to decide how to create icon related theme patches.
 
 ### How It Works
 
 In simple terms, `A File Icon` does the following:
 
-1. Copies all the necessary files right after install or upgrade to `zzz A File Icon zzz` directory
-2. Searches all installed themes
+1. Searches all installed themes
 3. Checks if themes are already patched, if not
-4. Patches them by generating `<theme-name>.sublime-theme` files from a [template][template]
-5. For themes those support file icon customization, it provides `.tmPreferences` files and missing icons by default (user can override icons provided by the theme via `"force_mode": true`).
+4. patches them by generating `<theme-name>.sublime-theme` files from a [template][template]
 
 The real process is just a little bit more complex to minimize hard drive I/O.
 

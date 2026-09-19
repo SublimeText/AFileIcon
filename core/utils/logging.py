@@ -1,6 +1,6 @@
-import sublime
 import functools
 
+import sublime
 
 MESSAGE_PREFIX = "A File Icon"
 VALUE_PREFIX = " " * (len(MESSAGE_PREFIX) - 2) + ">>> "
