@@ -21,7 +21,7 @@ The CairoSVG dependency needs the `cairo` library being present on the system.
 **Linux**
 
 ```bash
-sudo apt-get install libcairo2
+sudo apt-get install libcairo2 uv
 ```
 
 **Windows**
@@ -34,50 +34,26 @@ As a last resort, [Graphviz](https://graphviz.org/) includes `cairo.dll` in its 
 
 Navigate to _A File Icon_ root directory and call...
 
-**Linux/MacOS**
-
 ```bash
-python3 -m venv .venv
-. .venv/bin/activate
-python3 -m pip install -U -r requirements-dev.txt
-```
-
-**Windows**
-
-```cmd
-py -m venv .venv
-.venv\Scripts\activate
-py -m pip install -U -r requirements-dev.txt
+uv sync --dev
 ```
 
 ### Building
 
 Navigate to _A File Icon_ root directory, activate python virtual environment and call...
 
-**Linux/MacOS**
-
 ```bash
 # build everything
-python3 build
+uv run build
 
 # build icons only
-python3 build --icons
+uv run build --icons
 
 # build preferences only
-python3 build --preferences
-```
+uv run build --preferences
 
-**Windows**
-
-```cmd
-: build everything
-py build
-
-: build icons only
-py build --icons
-
-: build preferences only
-py build --preferences
+# build icon theme files only
+uv run build --theme
 ```
 
 ## Want to add new icons?

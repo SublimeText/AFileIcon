@@ -1,8 +1,8 @@
 import argparse
-import json
 
 from icon_theme import create_icon_theme
-from icons import create_icons, icons_path
+
+from icons import create_icons, load_icons_json
 from preferences import create_preferences
 
 
@@ -29,13 +29,13 @@ def main(argv=None):
         help="create file icons theme",
     )
 
-    with open(icons_path("icons.json")) as fp:
-        icons = json.load(fp)
+    icons = load_icons_json()
 
     options = parser.parse_args(argv)
     if not options.icons and not options.preferences and not options.theme:
         options.icons = True
         options.preferences = True
+        options.theme = True
 
     if options.icons:
         print("building icons...")
