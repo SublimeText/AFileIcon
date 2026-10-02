@@ -2457,7 +2457,7 @@
 					"nsh",
 					"bnsi",
 					"bnsh",
-					"nsdincgit"
+					"nsdinc"
 				],
 				"name": "Plain Text (NSIS)",
 				"scope": "source.nsis"
