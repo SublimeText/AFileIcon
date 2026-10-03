@@ -1,5 +1,9 @@
 [
 	{
+		"caption": "UI: Select File Icon Theme",
+		"command": "afi_select_file_icon_theme",
+	},
+	{
 		"caption": "Preferences: A File Icon Settings",
 		"command": "edit_settings", "args":
 		{

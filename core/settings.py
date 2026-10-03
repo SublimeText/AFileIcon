@@ -15,11 +15,14 @@ _cached_settings = {}
 _uuid = "9ebcce78-4cac-4089-8bd7-d551c634b052"
 
 
+def load_json(res_path):
+    return cast("dict[str, sublime.Value]", sublime.decode_value(sublime.load_resource(res_path)))
+
+
 def add_listener():
     log("Initializing settings")
-    path = f"Packages/{PACKAGE_NAME}/{PACKAGE_SETTINGS}"
     package_settings = sublime.load_settings(PACKAGE_SETTINGS)
-    for key in cast("dict[str, sublime.Value]", sublime.decode_value(sublime.load_resource(path))):
+    for key in load_json(f"Packages/{PACKAGE_NAME}/{PACKAGE_SETTINGS}"):
         if key not in ("dev_mode", "dev_trace"):
             _cached_settings[key] = package_settings.get(key)
 

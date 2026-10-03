@@ -1,13 +1,17 @@
 [
 	{
 		"id": "preferences",
-		"children":
-		[
+		"children": [
+			{ "caption": "-" },
+			{
+				"caption": "Select Icon Theme…",
+				"command": "afi_select_file_icon_theme"
+			},
+			{ "caption": "-" },
 			{
 				"id": "package-settings",
 				"caption": "Package Settings",
-				"children":
-				[
+				"children": [
 					{
 						"caption": "A File Icon",
 						"children": [
