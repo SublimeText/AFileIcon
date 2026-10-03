@@ -3,7 +3,6 @@ import argparse
 from icon_theme import create_icon_theme
 
 from icons import create_icons, load_icons_json
-from preferences import create_preferences
 
 
 def main(argv=None):
@@ -15,12 +14,7 @@ def main(argv=None):
         default=False,
         help="convert svg icons to png",
     )
-    parser.add_argument(
-        "-p",
-        "--preferences",
-        action="store_true",
-        help="create preferences",
-    )
+
     parser.add_argument(
         "-t",
         "--theme",
@@ -32,18 +26,13 @@ def main(argv=None):
     icons = load_icons_json()
 
     options = parser.parse_args(argv)
-    if not options.icons and not options.preferences and not options.theme:
+    if not options.icons and not options.theme:
         options.icons = True
-        options.preferences = True
         options.theme = True
 
     if options.icons:
         print("building icons...")
         create_icons(icons)
-
-    if options.preferences:
-        print("building preferences...")
-        create_preferences(icons)
 
     if options.theme:
         print("building file icons theme...")
