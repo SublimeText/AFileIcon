@@ -105,7 +105,6 @@ This file contains a list of possible packages you may need to install to see th
 ## EJS
 
 - [EJS](https://packagecontrol.io/packages/EJS)
-- [EJS 2](https://packagecontrol.io/packages/EJS%202)
 
 ## Elixir
 
@@ -203,11 +202,11 @@ This file contains a list of possible packages you may need to install to see th
 
 ## LESS
 
-- [LessImproved](https://packagecontrol.io/packages/LessImproved)
+- [Less](https://packagecontrol.io/packages/Less)
 
 ## Liquid
 
-- [Siteleaf Liquid Syntax](https://packagecontrol.io/packages/Siteleaf%20Liquid%20Syntax)
+- [Liquid](https://packagecontrol.io/packages/Liquid)
 
 ## LiveScript
 
@@ -227,7 +226,7 @@ This file contains a list of possible packages you may need to install to see th
 
 ## MDX
 
-- [MDX Syntax Highlighting](https://packagecontrol.io/packages/MDX%20Syntax%20Highlighting)
+- [MDX](https://packagecontrol.io/packages/MDX)
 
 ## Meson
 
@@ -240,6 +239,7 @@ This file contains a list of possible packages you may need to install to see th
 ## Mustache & Handlebars
 
 - [HTML Mustache](https://packagecontrol.io/packages/HTML%20Mustache)
+- [Mustache](https://packagecontrol.io/packages/Mustache)
 - [Handlebars](https://packagecontrol.io/packages/Handlebars)
 
 ## Nginx
@@ -282,7 +282,7 @@ This file contains a list of possible packages you may need to install to see th
 
 ## PHP
 
-- [Laravel Blade Highlighter](https://packagecontrol.io/packages/Laravel%20Blade%20Highlighter)
+- [Laravel Blade](https://packagecontrol.io/packages/Laravel%20Blade)
 
 ## Pine
 
@@ -302,7 +302,7 @@ This file contains a list of possible packages you may need to install to see th
 
 ## PostCSS
 
-- [Syntax Highlighting for Post​CSS](https://packagecontrol.io/packages/Syntax%20Highlighting%20for%20PostCSS)
+- [PostCSS](https://packagecontrol.io/packages/PostCSS)
 
 ## PostScript
 
@@ -322,7 +322,7 @@ This file contains a list of possible packages you may need to install to see th
 
 ## Pug (PKA Jade)
 
-- [Pug](https://github.com/davidrios/pug-tmbundle)
+- [Pug](https://packagecontrol.io/packages/Pug)
 
 ## Puppet
 
@@ -360,8 +360,6 @@ This file contains a list of possible packages you may need to install to see th
 ## SASS & SCSS
 
 - [Sass](https://packagecontrol.io/packages/Sass)
-- [Syntax Highlighting for Sass](https://packagecontrol.io/packages/Syntax%20Highlighting%20for%20Sass)
-- [SCSS](https://packagecontrol.io/packages/SCSS)
 
 ## Scheme
 
@@ -404,7 +402,6 @@ This file contains a list of possible packages you may need to install to see th
 ## Swift
 
 - [Swift](https://packagecontrol.io/packages/Swift)
-- [Swift for F\*ing Sublime](https://packagecontrol.io/packages/Swift%20for%20F*ing%20Sublime)
 
 ## Tailwind CSS
 
@@ -412,7 +409,7 @@ This file contains a list of possible packages you may need to install to see th
 
 ## Terraform
 
-- [Terraform](https://github.com/tmichel/sublime-terraform)
+- [Terraform](https://packagecontrol.io/packages/Terraform)
 
 ## TODO
 
@@ -428,7 +425,7 @@ This file contains a list of possible packages you may need to install to see th
 
 ## Twig
 
-- [PHP-Twig](https://packagecontrol.io/packages/PHP-Twig)
+- [Twig](https://packagecontrol.io/packages/Twig)
 
 ## TypeScript
 
@@ -437,7 +434,7 @@ This file contains a list of possible packages you may need to install to see th
 
 ## Typst
 
-- [Typst](https://github.com/hyrious/typst-syntax-highlight)
+- [Typst](https://packagecontrol.io/packages/Typst)
 
 ## Unreal
 
@@ -468,7 +465,7 @@ This file contains a list of possible packages you may need to install to see th
 
 ## Vue.js
 
-- [Vue Syntax Highlight](https://packagecontrol.io/packages/Vue%20Syntax%20Highlight)
+- [Vue](https://packagecontrol.io/packages/Vue)
 
 ## Vyper
 
@@ -492,4 +489,4 @@ This file contains a list of possible packages you may need to install to see th
 
 ## Zig
 
-- [Zig Syntax Highlight](https://packagecontrol.io/packages/Zig%20Language)
+- [Zig Language](https://packagecontrol.io/packages/Zig%20Language)
