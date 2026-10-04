@@ -1,0 +1,31 @@
+Version 4.0.0
+=============
+
+A File Icon now relies on Sublime Text's core icon theme support
+and provides commands to select and customize installed icon themes.
+
+Icon themes are defined by `<Name>.sublime-file-icons` files.
+
+This breaking change may cause visible changes in various themes
+as it now behaves as if former `"force_mode": true` setting was set.
+
+This version requires Sublime Text 4206+
+
+Major Changes
+-------------
+
+- the `zzz A File Icon` overlay package is gone
+- no longer ships `file_type_...tmPreferences` files
+- no longer creates alias or dummy syntax definitions
+- no longer merges its icons with those from themes
+  as it is expected for themes to ship their own .sublime-file-icons files
+
+Basic theme patches to support icon tinting and tweaking transparency and size
+are still created in ST's cache folder to get them out of sight.
+
+Usage
+-----
+
+Run "UI: Select Icon Theme" from Command Palette to switch between installed icon themes.
+
+Run "UI: Customize Icon Theme" from Command Palette to add or change icon assignments.
