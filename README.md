@@ -5,96 +5,95 @@
 [![Star on GitHub][img-stars]][stars]
 [![Join the chat at Sublime Forum][img-forum]][forum]
 
-This package adds file-specific icons to Sublime Text for improved visual grepping. It's heavily inspired by [Atom File Icons](https://github.com/file-icons/atom).
+This Sublime Text package ...
 
-Its aims are:
+1. provides basic infrastructure to select and customize file icon themes.
+2. ships colored and monochrome file icons, heavily inspired by [Atom File Icons](https://github.com/file-icons/atom).
 
-* Provide globally available file type specific icons for each UI themes, whether they provide their own file type specific icons or not.
+## Installation
 
-* Display file icons, even if required syntax definition is not installed.
-
-* Display specific icons for files, no dedicated syntax definition exists for.
-
-If you have any problems, please search for a similar issue first, before creating [a new one][new-issue]. 
-
-> Also, check the list of [known issues][known-issues] before doing so.
-
-## Users
-
-### Installation
-
-#### Package Control
+### Package Control
 
 The easiest way to install is using Sublime's [Package Control][downloads]. It's listed as `A File Icon`.
 
-1. Open `Command Palette` using menu item `Tools → Command Palette...`
-2. Choose `Package Control: Install Package`
-3. Find `A File Icon` and hit `Enter`
+1. Open Command Palette using <kbd>ctrl+shift+P</kbd> or menu item `Tools → Command Palette...`
+2. Run `Package Control: Install Package`
+3. Find `A File Icon` and hit <kbd>Enter</kbd>
 
-#### Download
+### Manual Install
 
-1. [Download the `.zip`][release]
-2. Unzip and rename folder to `A File Icon`
-3. Copy folder into `Packages` directory, which you can find using the menu item `Preferences → Browse Packages...`
+1. Download [AFileIcon.sublime-package](https://github.com/SublimeText/AFileIcon/releases)
+2. Rename it to _A File Icon.sublime-package_
+3. Copy it into _Installed Packages_ directory
 
-> **Note:** Don't forget to restart Sublime Text after installing this package. 
+> [!NOTE]
+>
+> To find _Installed Packages_...
+>
+> 1. call _Menu > Preferences > Browse Packages.._
+> 2. Navigate to parent folder
 
-### Selecting Icon Theme
+## Usage
 
-As of ST4206, file icons are specified by "file icon themes".
+### Select Icon Theme
 
-To activate A File Icon's theme, add the following line to your user prferences.
+1. Open Command Palette using <kbd>ctrl+shift+P</kbd> or menu item `Tools → Command Palette...`
+2. Run `UI: Select Icon Theme`
+3. Choose a theme and hit <kbd>Enter</kbd>
 
-```jsonc
+### Customize Icon Theme
+
+1. Open Command Palette using <kbd>ctrl+shift+P</kbd> or menu item `Tools → Command Palette...`
+2. Run `UI: Customize Icon Theme`
+3. Choose a theme and hit <kbd>Enter</kbd>
+
+An icon theme maps file extension to image names in the following format:
+
+```json
 {
-    "file_icon_theme": "A File Icon.sublime-file-icons",
+    "icons": {
+        "extension": "icon_file_name",
+    }
 }
 ```
 
-For monochrome icons specify
+### Customize Icon Settings
 
-```jsonc
-{
-    "file_icon_theme": "A File Icon (Mono).sublime-file-icons",
-}
-```
+To change color, opacity level and size of icons,
+modify A File Icon settings:
 
-### Customization
+1. Open Command Palette using <kbd>ctrl+shift+P</kbd> or menu item `Tools → Command Palette...`
+2. Run `Preferences: A File Icon Settings`
 
-You can change the color, opacity level and size of the icons by modifying your user preferences file, which you can find by:
+> [!NOTE]
+>
+> Settings are applied globally to all icon themes.
 
-* `Preferences → Package Settings → A File Icon → Settings`,
-* Choose `A File Icon: Settings` in `Command Palette`.
+## Theme Developers
 
-## Developers
-
-### Bring support file icon customization to your theme
- 
-As of Sublime Text 4206, dedicated icon themes are supported, which A File Icon v4 relies on.
+As of Sublime Text 4206 dedicated icon themes are supported, 
+which A File Icon 4.0 relies on.
 
 A side effect is it no longer merging its icons into those shipped with themes.
 
-Ideally, icon themes are deployed by dedicated packages to fully separate them from themes or color schemes.
+Ideally, icon themes are deployed by dedicated packages
+to fully separate them from themes or color schemes.
 
-If theme packages ship icons, a related `.sublime-file-icons` file is to be defined for them to be selectable by end users.
+If theme packages ship icons,
+a related `.sublime-file-icons` file is to be defined
+for them to be selectable by end users.
 
-The `.supports-a-file-icon-customization` is still evaluated to decide how to create icon related theme patches.
-
-### How It Works
-
-In simple terms, `A File Icon` does the following:
-
-1. Searches all installed themes
-3. Checks if themes are already patched, if not
-4. patches them by generating `<theme-name>.sublime-theme` files from a [template][template]
-
-The real process is just a little bit more complex to minimize hard drive I/O.
+The `.supports-a-file-icon-customization` is still evaluated
+to decide how to create icon related theme patches
+as former versions of A File Icons did.
 
 ## Resources
 
 ### Colors
 
-Colors are bright because they should look good with most themes. However you can change color and opacity level of all icons. See [customization][customization].
+Colors are bright because they should look good with most themes.
+However you can change color and opacity level of all icons.
+See [customization][customization].
 
 ![Palette][img-palette]
 
@@ -109,7 +108,9 @@ This package contains icons provided by:
 - [Icomoon](https://icomoon.io/)
 - [Octicons](https://octicons.github.com/)
 
-Source icons are provided in SVG format (Sublime Text doesn't currently support it). They are convert to @1x and @2x PNG assets before each release via python build script `uv -m build -i`.
+Source icons are provided in SVG format (Sublime Text doesn't currently support it).
+They are convert to @1x and @2x PNG assets before each release
+via python build script `uv run build --icons`.
 
 Rasterized icons can be found in `icons` folder.
 
@@ -118,13 +119,12 @@ Rasterized icons can be found in `icons` folder.
 [customization]: https://github.com/deathaxe/sublime-a-file-icon#customization
 [downloads]: https://packagecontrol.io/packages/A%20File%20Icon 'A File Icon @ Package Control'
 [forum]: https://forum.sublimetext.com/t/a-file-icon-sublime-file-specific-icons-for-improved-visual-grepping/25874
-[icons]: https://github.com/deathaxe/sublime-a-file-icon/tree/develop/icons/colored
+[icons]: https://github.com/deathaxe/sublime-a-file-icon/tree/master/icons/color
 [known-issues]: https://github.com/deathaxe/sublime-a-file-icon/labels/known%20issue
 [new-issue]: https://github.com/deathaxe/sublime-a-file-icon/issues/new
-[packages]: https://github.com/deathaxe/sublime-a-file-icon/blob/develop/PACKAGES.md
+[packages]: https://github.com/deathaxe/sublime-a-file-icon/blob/master/PACKAGES.md
 [release]: https://github.com/deathaxe/sublime-a-file-icon/releases
 [stars]: https://github.com/deathaxe/sublime-a-file-icon/stargazers
-[template]: https://github.com/deathaxe/sublime-a-file-icon/blob/develop/common/templates/theme.py
 [issues]: https://github.com/deathaxe/sublime-a-file-icon/issues
 
 <!-- Assets -->
