@@ -1,5 +1,9 @@
 [
 	{
+		"caption": "UI: Customize File Icon Theme",
+		"command": "afi_customize_file_icon_theme",
+	},
+	{
 		"caption": "UI: Select File Icon Theme",
 		"command": "afi_select_file_icon_theme",
 	},

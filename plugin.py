@@ -6,7 +6,12 @@ if int(sublime.version()) < 4206:
 else:
     import sys
 
-    __all__ = ["AfiSelectFileIconThemeCommand", "plugin_loaded", "plugin_unloaded"]
+    __all__ = [
+        "AfiCustomizeFileIconThemeCommand",
+        "AfiSelectFileIconThemeCommand",
+        "plugin_loaded",
+        "plugin_unloaded",
+    ]
 
     # Clear module cache to force reloading all modules of this package.
     prefix = __spec__.parent + "."  # don't clear the base package
@@ -19,7 +24,11 @@ else:
     del prefix
 
     from .core import settings
-    from .core.icon_theme import AfiSelectFileIconThemeCommand, setup_file_icon_theme
+    from .core.icon_theme import (
+        AfiCustomizeFileIconThemeCommand,
+        AfiSelectFileIconThemeCommand,
+        setup_file_icon_theme,
+    )
 
     def plugin_loaded():
         setup_file_icon_theme()

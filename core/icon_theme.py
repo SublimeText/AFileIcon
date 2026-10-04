@@ -1,4 +1,4 @@
-from os.path import basename
+from os.path import basename, join
 from typing import cast
 
 import sublime
@@ -19,6 +19,38 @@ def setup_file_icon_theme():
         sublime.run_command("afi_select_file_icon_theme")
 
 
+class AfiCustomizeFileIconThemeCommand(sublime_plugin.ApplicationCommand):
+    def run(self, name):
+        if "/" not in name:
+            possible_paths = sublime.find_resources(name)
+            if not possible_paths:
+                return
+
+            icon_theme = possible_paths[0]
+
+        else:
+            icon_theme = name
+
+        if icon_theme.startswith("Packages/"):
+            icon_theme = "${packages}" + icon_theme[len("Packages") :]
+
+        window = sublime.active_window()
+        window.run_command(
+            "edit_settings",
+            {
+                "base_file": icon_theme,
+                "user_file": join(sublime.packages_path(), "User", basename(name)),
+                "default": '// Custom icon assignments\n{\n\t"icons": {\n\t\t$0\n\t}\n}\n',
+            },
+        )
+
+    def input(self, args):
+        if not args or "name" not in args:
+            return FileIconThemeInputHandler(with_preview=False)
+        else:
+            return None
+
+
 class AfiSelectFileIconThemeCommand(sublime_plugin.ApplicationCommand):
     def run(self, name):
         prefs = sublime.load_settings(settings.USER_SETTINGS)
@@ -27,14 +59,16 @@ class AfiSelectFileIconThemeCommand(sublime_plugin.ApplicationCommand):
 
     def input(self, args):
         if not args or "name" not in args:
-            return FileIconThemeInputHandler()
+            return FileIconThemeInputHandler(with_preview=True)
         else:
             return None
 
 
 class FileIconThemeInputHandler(sublime_plugin.ListInputHandler):
-    def __init__(self):
+    def __init__(self, with_preview):
+        self.with_preview = with_preview
         self.prefs = sublime.load_settings(settings.USER_SETTINGS)
+        self.original = self.prefs.get("file_icon_theme")
 
     def name(self):
         return "name"
@@ -47,7 +81,6 @@ class FileIconThemeInputHandler(sublime_plugin.ListInputHandler):
         sublime.save_settings(settings.USER_SETTINGS)
 
     def list_items(self):
-        self.original = self.prefs.get("file_icon_theme")
         if self.original and isinstance(self.original, list):
             original = basename(cast(str, self.original[0]))
         elif self.original and isinstance(self.original, str):
@@ -75,12 +108,13 @@ class FileIconThemeInputHandler(sublime_plugin.ListInputHandler):
         return (items, selected)
 
     def preview(self, text):
-        self.last_previewed = text
+        if self.with_preview:
+            self.last_previewed = text
 
-        def preview_icon_theme():
-            if text == self.last_previewed and text != self.prefs.get("file_icon_theme"):
-                self.prefs.set("file_icon_theme", text)
+            def preview_icon_theme():
+                if text == self.last_previewed and text != self.prefs.get("file_icon_theme"):
+                    self.prefs.set("file_icon_theme", text)
 
-        sublime.set_timeout(preview_icon_theme, 250)
+            sublime.set_timeout(preview_icon_theme, 250)
 
         return ""

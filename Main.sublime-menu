@@ -7,6 +7,10 @@
 				"caption": "Select Icon Theme…",
 				"command": "afi_select_file_icon_theme"
 			},
+			{
+				"caption": "Customize Icon Theme",
+				"command": "afi_customize_file_icon_theme"
+			},
 			{ "caption": "-" },
 			{
 				"id": "package-settings",
