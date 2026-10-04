@@ -1,78 +1,55 @@
 import json
-import os
-import shutil
+from itertools import chain
+from pathlib import Path
 
 import sublime
 
-from itertools import chain
-
-from .utils import path
-from .utils.colors import convert_color_value
-from .utils.logging import log, dump
-
-from . import icons
+from .utils.logging import dump, log
 
 
-def patch(settings, overwrite=False, on_demand=False):
+def patch(settings: dict[str, sublime.Value], overwrite: bool = False, on_demand: bool = False):
     theme_packages = _installed_themes()
-    themes = set((theme for theme in chain(*theme_packages.values())))
+    themes = {theme for theme in chain(*theme_packages.values())}
     try:
         if on_demand and patch.themes == themes:
             return
-    except Exception:
+    except AttributeError:
         pass
     patch.themes = themes
 
-    supported = [] if settings.get("force_mode") else _customizable_themes()
+    supported = _customizable_themes()
+
+    package_name, *_ = __spec__.parent.split(".")
+    patch_root = Path(sublime.cache_path(), package_name)
+    patch_root.mkdir(parents=True, exist_ok=True)
 
     general_patch = _create_general_patch(settings)
     specific_patch = _create_specific_patch(settings)
-
-    general = path.overlay_patches_general_path()
-    specific = path.overlay_patches_specific_path()
-
-    color = "single" if settings.get("color") else "multi"
-    general_dest = os.path.join(general, color)
 
     patched = set()
 
     if theme_packages:
         log("Patching themes")
         for package, themes in theme_packages.items():
-            if package in supported:
-                icons.copy_missing(general, specific, package)
-                patched.update(
-                    _patch_themes(
-                        themes,
-                        os.path.join(specific, package, color),
-                        specific_patch,
-                        overwrite,
-                    )
+            patched.update(
+                _patch_themes(
+                    themes,
+                    patch_root,
+                    specific_patch if package in supported else general_patch,
+                    overwrite,
                 )
-            else:
-                patched.update(
-                    _patch_themes(themes, general_dest, general_patch, overwrite)
-                )
+            )
     else:
         log("No themes to patch!")
 
     log("Removing obsolete theme patches")
-    for dirpath, dirnames, filenames in os.walk(path.overlay_patches_path()):
-        if dirpath == specific:
-            for filepath in set(dirnames) - set(supported):
-                filepath = os.path.join(dirpath, filepath)
-                shutil.rmtree(filepath, ignore_errors=True)
-                dump(filepath)
-
-        for filename in filenames:
-            if filename.endswith(".sublime-theme"):
-                filepath = os.path.join(dirpath, filename)
-                if filepath not in patched:
-                    try:
-                        os.remove(filepath)
-                        dump(filepath)
-                    except OSError:
-                        pass
+    for file in patch_root.iterdir():
+        if file.name.endswith(".sublime-theme") and file.name not in patched:
+            try:
+                file.unlink()
+                dump(file.name)
+            except OSError:
+                pass
 
 
 def _customizable_themes():
@@ -101,35 +78,34 @@ def _installed_themes():
             continue
 
         _, package, *_, theme = res.split("/")
-        if package != path.OVERLAY_ROOT:
-            if theme not in found_themes:
-                found_themes.add(theme)
-                theme_packages.setdefault(package, []).append(theme)
+        if theme not in found_themes:
+            found_themes.add(theme)
+            theme_packages.setdefault(package, []).append(theme)
 
     dump(theme_packages)
     return theme_packages
 
 
-def _patch_themes(themes, dest, text, overwrite):
+def _patch_themes(themes: set[str], dest: Path, text: str, overwrite: bool) -> set[str]:
     patched = set()
     mode = "w" if overwrite else "x"
     for theme in themes:
         try:
-            filename = os.path.join(dest, theme)
-            patched.add(filename)
+            filename = dest / theme
+            patched.add(filename.name)
             with open(filename, mode) as t:
                 t.write(text)
         except FileExistsError:
-            log("Ignored `{}`".format(theme))
-        except Exception as error:
-            log("Error patching `{}`".format(theme))
-            dump(error)
+            log(f"Ignored `{theme}`")
+        except Exception as exc:
+            log(f"Error patching `{theme}`")
+            dump(exc)
         else:
-            log("Patched `{}`".format(theme))
+            log(f"Patched `{theme}`")
     return patched
 
 
-def _create_general_patch(settings):
+def _create_general_patch(settings: dict[str, sublime.Value]) -> str:
     log("Preparing general patch")
     theme_content = []
 
@@ -137,7 +113,7 @@ def _create_general_patch(settings):
     if row_padding:
         theme_content.append({"class": "sidebar_tree", "row_padding": row_padding})
 
-    color = convert_color_value(settings.get("color"))
+    color = settings.get("color")
     opacity = settings.get("opacity")
     icon = _patch_icon(None, color, opacity)
 
@@ -147,12 +123,12 @@ def _create_general_patch(settings):
 
     theme_content.append(icon)
 
-    color = convert_color_value(settings.get("color_on_hover"))
+    color = settings.get("color_on_hover")
     opacity = settings.get("opacity_on_hover")
     if color or opacity:
         theme_content.append(_patch_icon("hover", color, opacity))
 
-    color = convert_color_value(settings.get("color_on_select"))
+    color = settings.get("color_on_select")
     opacity = settings.get("opacity_on_select")
     if color or opacity:
         theme_content.append(_patch_icon("selected", color, opacity))
@@ -161,7 +137,7 @@ def _create_general_patch(settings):
     return json.dumps(theme_content)
 
 
-def _create_specific_patch(settings):
+def _create_specific_patch(settings: dict[str, sublime.Value]) -> str:
     log("Preparing specific patch")
     theme_content = []
 
@@ -169,7 +145,7 @@ def _create_specific_patch(settings):
     if row_padding:
         theme_content.append({"class": "sidebar_tree", "row_padding": row_padding})
 
-    color = convert_color_value(settings.get("color"))
+    color = settings.get("color")
     icon = _patch_icon(None, color)
 
     size = settings.get("size")
@@ -179,11 +155,11 @@ def _create_specific_patch(settings):
     theme_content.append(icon)
 
     if color:
-        color_on_hover = convert_color_value(settings.get("color_on_hover"))
+        color_on_hover = settings.get("color_on_hover")
         if color_on_hover:
             theme_content.append(_patch_icon("hover", color_on_hover))
 
-        color_on_select = convert_color_value(settings.get("color_on_select"))
+        color_on_select = settings.get("color_on_select")
         if color_on_select:
             theme_content.append(_patch_icon("selected", color_on_select))
 
@@ -191,7 +167,9 @@ def _create_specific_patch(settings):
     return json.dumps(theme_content)
 
 
-def _patch_icon(attrib, color=None, opacity=None):
+def _patch_icon(
+    attrib: str | None, color: sublime.Value = None, opacity: sublime.Value = None
+) -> sublime.Value:
     """Built an icon theme rule
 
     :attrib:

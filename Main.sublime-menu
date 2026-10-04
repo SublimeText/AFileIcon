@@ -1,13 +1,21 @@
 [
 	{
 		"id": "preferences",
-		"children":
-		[
+		"children": [
+			{ "caption": "-" },
+			{
+				"caption": "Select Icon Theme…",
+				"command": "afi_select_file_icon_theme"
+			},
+			{
+				"caption": "Customize Icon Theme",
+				"command": "afi_customize_file_icon_theme"
+			},
+			{ "caption": "-" },
 			{
 				"id": "package-settings",
 				"caption": "Package Settings",
-				"children":
-				[
+				"children": [
 					{
 						"caption": "A File Icon",
 						"children": [
@@ -18,10 +26,6 @@
 									"base_file": "${packages}/A File Icon/A File Icon.sublime-settings",
 									"default": "// A File Icon Preferences – User\n// ================================================================\n{\n\t$0\n}\n"
 								}
-							},
-							{
-								"caption": "Revert to a Freshly Installed State",
-								"command": "afi_revert"
 							}
 						]
 					}

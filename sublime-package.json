@@ -55,18 +55,6 @@
 							"default": []
 						},
 
-						"aliases": {
-							"type": "boolean",
-							"markdownDescription": "By default the package provides syntax aliases to apply such icons as `Gulpfile.js`, `webpack.config.js`, `package.json` and etc. If you don't want to use them you can apply icons for syntaxes only via setting this option to `false`.",
-							"default": true
-						},
-
-						"force_mode": {
-							"type": "boolean",
-							"markdownDescription": "Set `true` to use icons provided by the package if your theme supports icon customization (icons provided by the theme will be used by default).",
-							"default": false
-						},
-
 						"dev_mode": {
 							"type": "boolean",
 							"markdownDescription": "Set `true` when developing or debugging the package."

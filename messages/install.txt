@@ -1,0 +1,11 @@
+A File Icon now relies on Sublime Text's icon theme support
+and provides commands to select and customize installed icon themes.
+
+Icon themes are defined by `<Name>.sublime-file-icons` files.
+
+Usage
+-----
+
+Run "UI: Select Icon Theme" from Command Palette to switch icon sets.
+
+Run "UI: Customize Icon Theme" from Command Palette to add or change icon assignments.
