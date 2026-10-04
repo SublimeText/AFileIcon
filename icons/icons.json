@@ -2067,6 +2067,7 @@
 				"extensions": [
 					"Cargo.lock",
 					"Gopkg.lock",
+					"mise.lock",
 					"uv.lock"
 				],
 				"name": "TOML (Lock)",
@@ -2456,7 +2457,7 @@
 					"nsh",
 					"bnsi",
 					"bnsh",
-					"nsdincgit"
+					"nsdinc"
 				],
 				"name": "Plain Text (NSIS)",
 				"scope": "source.nsis"
