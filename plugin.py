@@ -31,7 +31,7 @@ else:
     )
 
     def plugin_loaded():
-        setup_file_icon_theme()
+        sublime.set_timeout(setup_file_icon_theme, 100)
         settings.add_listener()
 
     def plugin_unloaded():
