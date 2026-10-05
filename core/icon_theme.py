@@ -46,7 +46,7 @@ class AfiCustomizeFileIconThemeCommand(sublime_plugin.ApplicationCommand):
 
     def input(self, args):
         if not args or "name" not in args:
-            return FileIconThemeInputHandler(with_preview=False)
+            return FileIconThemeInputHandler(with_preview=False, with_default=False)
         else:
             return None
 
@@ -59,13 +59,14 @@ class AfiSelectFileIconThemeCommand(sublime_plugin.ApplicationCommand):
 
     def input(self, args):
         if not args or "name" not in args:
-            return FileIconThemeInputHandler(with_preview=True)
+            return FileIconThemeInputHandler(with_preview=True, with_default=True)
         else:
             return None
 
 
 class FileIconThemeInputHandler(sublime_plugin.ListInputHandler):
-    def __init__(self, with_preview):
+    def __init__(self, with_preview, with_default):
+        self.with_default = with_default
         self.with_preview = with_preview
         self.prefs = sublime.load_settings(settings.USER_SETTINGS)
         self.original = self.prefs.get("file_icon_theme")
@@ -90,6 +91,12 @@ class FileIconThemeInputHandler(sublime_plugin.ListInputHandler):
 
         ext = len(".sublime-file-icons")
         items = [
+            sublime.ListInputItem(
+                text="(Default)",
+                value="",
+                kind=CURRENT_KIND if original == "" else AVAILABLE_KIND,
+            )
+        ] + [
             sublime.ListInputItem(
                 text=i[:-ext],
                 value=i,
