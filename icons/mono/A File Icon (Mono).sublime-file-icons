@@ -1495,6 +1495,8 @@
 		"TSQL": "file_type_sql",
 		"tsx": "file_type_tsx",
 		"TSX": "file_type_tsx",
+		"ttc": "file_type_font",
+		"TTC": "file_type_font",
 		"ttf": "file_type_font",
 		"TTF": "file_type_font",
 		"twig": "file_type_twig",
