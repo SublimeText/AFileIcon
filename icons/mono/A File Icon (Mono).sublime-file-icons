@@ -1446,6 +1446,8 @@
 		"tasks": "file_type_todo",
 		"tcl": "file_type_tcl",
 		"TCL": "file_type_tcl",
+		"terminal": "file_type_shell",
+		"TERMINAL": "file_type_shell",
 		"tesc": "file_type_opengl",
 		"TESC": "file_type_opengl",
 		"tese": "file_type_opengl",
@@ -1669,6 +1671,8 @@
 		"zon": "file_type_zig",
 		"ZON": "file_type_zig",
 		"zsh": "file_type_shell",
-		"ZSH": "file_type_shell"
+		"ZSH": "file_type_shell",
+		"zsh-theme": "file_type_shell",
+		"ZSH-THEME": "file_type_shell"
 	}
 }

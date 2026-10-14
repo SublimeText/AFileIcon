@@ -3531,7 +3531,8 @@
 					"ebuild",
 					"eclass",
 					"PKGBUILD",
-					"sh"
+					"sh",
+					"terminal"
 				],
 				"name": "Plain Text (Bash)",
 				"scope": "source.shell.bash"
@@ -3550,7 +3551,8 @@
 					".zprofile",
 					".zshenv",
 					".zshrc",
-					"zsh"
+					"zsh",
+					"zsh-theme"
 				],
 				"name": "Plain Text (Zsh)",
 				"scope": "source.shell.zsh"
