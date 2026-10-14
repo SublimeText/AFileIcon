@@ -940,6 +940,19 @@
 			}
 		]
 	},
+	"file_type_ebook": {
+		"color": "green",
+		"syntaxes": [
+			{
+				"extensions": [
+					"epub",
+					"opf"
+				],
+				"name": "Plain Text (EBook)",
+				"scope": "text.epub"
+			}
+		]
+	},
 	"file_type_editorconfig": {
 		"color": "yellow",
 		"syntaxes": [
