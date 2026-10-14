@@ -1331,6 +1331,7 @@
 			{
 				"extensions": [
 					".gitignore",
+					".gitignore_global",
 					"gitignore",
 					"sparse-checkout"
 				],

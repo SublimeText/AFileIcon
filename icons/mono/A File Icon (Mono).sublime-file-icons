@@ -65,6 +65,7 @@
 		".gitconfig": "file_type_git",
 		".gitdescription": "file_type_git",
 		".gitignore": "file_type_git",
+		".gitignore_global": "file_type_git",
 		".gitkeep": "file_type_git",
 		".gitmodules": "file_type_git",
 		".gvimrc": "file_type_vim",
