@@ -31,8 +31,13 @@ else:
     )
 
     def plugin_loaded():
-        sublime.set_timeout(setup_file_icon_theme, 100)
-        settings.add_listener()
+
+        def init():
+            # delay execution as ST doesn't load resources right after upgrades
+            setup_file_icon_theme()
+            settings.add_listener()
+
+        sublime.set_timeout(init, 100)
 
     def plugin_unloaded():
         settings.clear_listener()
